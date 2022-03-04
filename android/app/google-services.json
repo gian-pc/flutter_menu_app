@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "579328710864",
+    "project_id": "codigo3-menu-app-d58d8",
+    "storage_bucket": "codigo3-menu-app-d58d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579328710864:android:37df94b2b88ad1abfd26d5",
+        "android_client_info": {
+          "package_name": "com.example.flutter_codigo3_menu_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579328710864-hlia93teg71rbsgtrgtqjsl8vqutovai.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcLvdq_FVtcCsripAgNfQ6vQBvmHZqXsk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579328710864-hlia93teg71rbsgtrgtqjsl8vqutovai.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
