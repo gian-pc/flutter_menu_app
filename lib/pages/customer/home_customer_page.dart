@@ -505,10 +505,690 @@ class HomeCustomerPage extends StatelessWidget {
                         ],
                       ),
                     ),
+                  ],
+                ),
+              ),
+
+              // Section 1
+
+              SizedBox(height: 30.0,),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 10.0),
+                child: Row(
+                  children: [
+                    Text(
+                      "Entradas",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18.0,
+                        fontFamily: 'Source Sans Pro Black'
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 20.0,),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(left: 10.0, right: 10.0),
+                      constraints: BoxConstraints(
+                        maxWidth: 200.0,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            height: 140,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(18.0),
+                              boxShadow: [
+                                BoxShadow(
+                                  offset: Offset(0, 4),
+                                  blurRadius: 10,
+                                  color: Colors.white.withOpacity(0.2),
+                                ),
+                              ],
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                      "https://i0.wp.com/fresmind.com/wp-content/uploads/2021/04/recetas-de-crepas-faciles-naturales-scaled.jpg?ssl=1")),
+                            ),
+                            /*child: Stack(
+                              children: [
+                                Positioned(
+                                  right: 0,
+                                  child: Container(
+                                    margin: EdgeInsets.symmetric(
+                                        horizontal: 10.0, vertical: 4.0),
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 8.0, vertical: 3.0),
+                                    decoration: BoxDecoration(
+                                      color: Color(0xffFFCC00),
+                                      borderRadius: BorderRadius.circular(26.0),
+                                    ),
+                                    child: Text(
+                                      "30% Desc",
+                                      style: TextStyle(
+                                        fontSize: 15.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),*/
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "CREPE",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            "Crepes deliciosos con frutas",
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              color: Colors.white70,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 13.0,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "S/. 12.0",
+                                style: TextStyle(
+                                  color: Colors.white54,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "4.6",
+                                      style: TextStyle(
+                                        color: Colors.white54,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      size: 18.0,
+                                      color: Color(0xffED9B00),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 10.0, right: 10.0),
+                      constraints: BoxConstraints(
+                        maxWidth: 200.0,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            height: 140,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(18.0),
+                              boxShadow: [
+                                BoxShadow(
+                                  offset: Offset(0, 4),
+                                  blurRadius: 10,
+                                  color: Colors.white.withOpacity(0.2),
+                                ),
+                              ],
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                      "https://i0.wp.com/fresmind.com/wp-content/uploads/2021/04/recetas-de-crepas-faciles-naturales-scaled.jpg?ssl=1")),
+                            ),
+                            /*child: Stack(
+                              children: [
+                                Positioned(
+                                  right: 0,
+                                  child: Container(
+                                    margin: EdgeInsets.symmetric(
+                                        horizontal: 10.0, vertical: 4.0),
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 8.0, vertical: 3.0),
+                                    decoration: BoxDecoration(
+                                      color: Color(0xffFFCC00),
+                                      borderRadius: BorderRadius.circular(26.0),
+                                    ),
+                                    child: Text(
+                                      "30% Desc",
+                                      style: TextStyle(
+                                        fontSize: 15.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),*/
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "CREPE",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            "Crepes deliciosos con frutas",
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              color: Colors.white70,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 13.0,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "S/. 12.0",
+                                style: TextStyle(
+                                  color: Colors.white54,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "4.6",
+                                      style: TextStyle(
+                                        color: Colors.white54,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      size: 18.0,
+                                      color: Color(0xffED9B00),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 10.0, right: 10.0),
+                      constraints: BoxConstraints(
+                        maxWidth: 200.0,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            height: 140,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(18.0),
+                              boxShadow: [
+                                BoxShadow(
+                                  offset: Offset(0, 4),
+                                  blurRadius: 10,
+                                  color: Colors.white.withOpacity(0.2),
+                                ),
+                              ],
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                      "https://i0.wp.com/fresmind.com/wp-content/uploads/2021/04/recetas-de-crepas-faciles-naturales-scaled.jpg?ssl=1")),
+                            ),
+                            /*child: Stack(
+                              children: [
+                                Positioned(
+                                  right: 0,
+                                  child: Container(
+                                    margin: EdgeInsets.symmetric(
+                                        horizontal: 10.0, vertical: 4.0),
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 8.0, vertical: 3.0),
+                                    decoration: BoxDecoration(
+                                      color: Color(0xffFFCC00),
+                                      borderRadius: BorderRadius.circular(26.0),
+                                    ),
+                                    child: Text(
+                                      "30% Desc",
+                                      style: TextStyle(
+                                        fontSize: 15.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),*/
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "CREPE",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            "Crepes deliciosos con frutas",
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              color: Colors.white70,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 13.0,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "S/. 12.0",
+                                style: TextStyle(
+                                  color: Colors.white54,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "4.6",
+                                      style: TextStyle(
+                                        color: Colors.white54,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      size: 18.0,
+                                      color: Color(0xffED9B00),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
 
                   ],
                 ),
               ),
+
+              // Section 2
+
+              SizedBox(height: 30.0,),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 10.0),
+                child: Row(
+                  children: [
+                    Text(
+                      "Bebidas",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18.0,
+                          fontFamily: 'Source Sans Pro Black'
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 20.0,),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(left: 10.0, right: 10.0),
+                      constraints: BoxConstraints(
+                        maxWidth: 200.0,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            height: 140,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(18.0),
+                              boxShadow: [
+                                BoxShadow(
+                                  offset: Offset(0, 4),
+                                  blurRadius: 10,
+                                  color: Colors.white.withOpacity(0.2),
+                                ),
+                              ],
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                      "https://cdn.aarp.net/content/dam/aarp/food/recipes/2018/10/1140-limofresa-gas-drink-esp.imgcache.rev.web.1000.575.jpg")),
+                            ),
+                            /*child: Stack(
+                              children: [
+                                Positioned(
+                                  right: 0,
+                                  child: Container(
+                                    margin: EdgeInsets.symmetric(
+                                        horizontal: 10.0, vertical: 4.0),
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 8.0, vertical: 3.0),
+                                    decoration: BoxDecoration(
+                                      color: Color(0xffFFCC00),
+                                      borderRadius: BorderRadius.circular(26.0),
+                                    ),
+                                    child: Text(
+                                      "30% Desc",
+                                      style: TextStyle(
+                                        fontSize: 15.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),*/
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Sangría",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            "Sangría con frutas deliciosas",
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              color: Colors.white70,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 13.0,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "S/. 28.0",
+                                style: TextStyle(
+                                  color: Colors.white54,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "4.6",
+                                      style: TextStyle(
+                                        color: Colors.white54,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      size: 18.0,
+                                      color: Color(0xffED9B00),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 10.0, right: 10.0),
+                      constraints: BoxConstraints(
+                        maxWidth: 200.0,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            height: 140,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(18.0),
+                              boxShadow: [
+                                BoxShadow(
+                                  offset: Offset(0, 4),
+                                  blurRadius: 10,
+                                  color: Colors.white.withOpacity(0.2),
+                                ),
+                              ],
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                      "https://cdn.aarp.net/content/dam/aarp/food/recipes/2018/10/1140-limofresa-gas-drink-esp.imgcache.rev.web.1000.575.jpg")),
+                            ),
+                            /*child: Stack(
+                              children: [
+                                Positioned(
+                                  right: 0,
+                                  child: Container(
+                                    margin: EdgeInsets.symmetric(
+                                        horizontal: 10.0, vertical: 4.0),
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 8.0, vertical: 3.0),
+                                    decoration: BoxDecoration(
+                                      color: Color(0xffFFCC00),
+                                      borderRadius: BorderRadius.circular(26.0),
+                                    ),
+                                    child: Text(
+                                      "30% Desc",
+                                      style: TextStyle(
+                                        fontSize: 15.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),*/
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Sangría",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            "Sangría con frutas deliciosas",
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              color: Colors.white70,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 13.0,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "S/. 28.0",
+                                style: TextStyle(
+                                  color: Colors.white54,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "4.6",
+                                      style: TextStyle(
+                                        color: Colors.white54,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      size: 18.0,
+                                      color: Color(0xffED9B00),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 10.0, right: 10.0),
+                      constraints: BoxConstraints(
+                        maxWidth: 200.0,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            height: 140,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(18.0),
+                              boxShadow: [
+                                BoxShadow(
+                                  offset: Offset(0, 4),
+                                  blurRadius: 10,
+                                  color: Colors.white.withOpacity(0.2),
+                                ),
+                              ],
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                      "https://cdn.aarp.net/content/dam/aarp/food/recipes/2018/10/1140-limofresa-gas-drink-esp.imgcache.rev.web.1000.575.jpg")),
+                            ),
+                            /*child: Stack(
+                              children: [
+                                Positioned(
+                                  right: 0,
+                                  child: Container(
+                                    margin: EdgeInsets.symmetric(
+                                        horizontal: 10.0, vertical: 4.0),
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 8.0, vertical: 3.0),
+                                    decoration: BoxDecoration(
+                                      color: Color(0xffFFCC00),
+                                      borderRadius: BorderRadius.circular(26.0),
+                                    ),
+                                    child: Text(
+                                      "30% Desc",
+                                      style: TextStyle(
+                                        fontSize: 15.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),*/
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "Sangría",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            "Sangría con frutas deliciosas",
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              color: Colors.white70,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 13.0,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "S/. 28.0",
+                                style: TextStyle(
+                                  color: Colors.white54,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "4.6",
+                                      style: TextStyle(
+                                        color: Colors.white54,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      size: 18.0,
+                                      color: Color(0xffED9B00),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 40.0,),
+
             ],
           ),
         ),
