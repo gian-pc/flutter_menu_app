@@ -1,5 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo3_menu_app/pages/customer/category_list_product_page.dart';
 
 class HomeCustomerPage extends StatelessWidget {
   @override
@@ -102,7 +103,14 @@ class HomeCustomerPage extends StatelessWidget {
                               ),
                             ),
                           ),
-                          onSelected: (bool selected) {},
+                          onSelected: (bool selected) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CategoryListProductPage(),
+                              ),
+                            );
+                          },
                         ),
                       ),
                       Container(
@@ -511,7 +519,9 @@ class HomeCustomerPage extends StatelessWidget {
 
               // Section 1
 
-              SizedBox(height: 30.0,),
+              SizedBox(
+                height: 30.0,
+              ),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 10.0),
                 child: Row(
@@ -519,15 +529,16 @@ class HomeCustomerPage extends StatelessWidget {
                     Text(
                       "Entradas",
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18.0,
-                        fontFamily: 'Source Sans Pro Black'
-                      ),
+                          color: Colors.white,
+                          fontSize: 18.0,
+                          fontFamily: 'Source Sans Pro Black'),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 20.0,),
+              SizedBox(
+                height: 20.0,
+              ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -844,14 +855,15 @@ class HomeCustomerPage extends StatelessWidget {
                         ],
                       ),
                     ),
-
                   ],
                 ),
               ),
 
               // Section 2
 
-              SizedBox(height: 30.0,),
+              SizedBox(
+                height: 30.0,
+              ),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 10.0),
                 child: Row(
@@ -861,13 +873,14 @@ class HomeCustomerPage extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 18.0,
-                          fontFamily: 'Source Sans Pro Black'
-                      ),
+                          fontFamily: 'Source Sans Pro Black'),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 20.0,),
+              SizedBox(
+                height: 20.0,
+              ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -1187,8 +1200,9 @@ class HomeCustomerPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 40.0,),
-
+              SizedBox(
+                height: 40.0,
+              ),
             ],
           ),
         ),
