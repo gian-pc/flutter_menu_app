@@ -84,6 +84,7 @@ class HomeCustomerPage extends StatelessWidget {
                       subtitle: "Costillar de cordero copn especias y acompañado de ensaladas",
                       price: "50.00",
                       rate: "4.6",
+                      discount: "50",
                     ),
                   ],
                 ),

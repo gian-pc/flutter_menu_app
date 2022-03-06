@@ -8,6 +8,7 @@ class ItemCarouselWidget extends StatelessWidget {
   String subtitle;
   String price;
   String rate;
+  String? discount;
 
   ItemCarouselWidget({
     required this.image,
@@ -15,6 +16,7 @@ class ItemCarouselWidget extends StatelessWidget {
     required this.subtitle,
     required this.price,
     required this.rate,
+    this.discount,
   });
 
   @override
@@ -48,7 +50,7 @@ class ItemCarouselWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              child: Stack(
+              child:discount != null ? Stack(
                 children: [
                   Positioned(
                     right: 0,
@@ -62,7 +64,7 @@ class ItemCarouselWidget extends StatelessWidget {
                         borderRadius: BorderRadius.circular(26.0),
                       ),
                       child: Text(
-                        "30% Desc",
+                        "${this.discount}%",
                         style: TextStyle(
                           fontSize: 15.0,
                           fontWeight: FontWeight.bold,
@@ -71,7 +73,7 @@ class ItemCarouselWidget extends StatelessWidget {
                     ),
                   ),
                 ],
-              ),
+              ):Container(),
             ),
             SizedBox(height: 10),
             Text(
