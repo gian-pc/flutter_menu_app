@@ -75,7 +75,10 @@ class HomeCustomerPage extends StatelessWidget {
                             child: Center(
                               child: Text(
                                 "Todos",
-                                style: TextStyle(fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14.0,
+                                ),
                               ),
                             ),
                           ),
