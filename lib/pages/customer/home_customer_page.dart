@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_codigo3_menu_app/pages/customer/category_list_product_page.dart';
 import 'package:flutter_codigo3_menu_app/pages/customer/product_detail_page.dart';
+import 'package:flutter_codigo3_menu_app/widgets/category_filter_widget.dart';
 
 import '../../widgets/text_normal_widget.dart';
 
@@ -53,108 +54,9 @@ class HomeCustomerPage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 4.0),
-                        child: FilterChip(
-                          backgroundColor: Color(0xffED9B00),
-                          label: Container(
-                            height: 26,
-                            width: 50,
-                            child: Center(
-                              child: Text(
-                                "Todos",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14.0,
-                                ),
-                              ),
-                            ),
-                          ),
-                          onSelected: (bool selected) {},
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 4.0),
-                        child: FilterChip(
-                          backgroundColor: Color(0xff1B1A21),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(24.0),
-                            side: BorderSide(
-                              color: Color(0xff1B1A21),
-                            ),
-                          ),
-                          label: Container(
-                            height: 26.0,
-                            child: Center(
-                              child: Text(
-                                "Postres",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white60,
-                                ),
-                              ),
-                            ),
-                          ),
-                          onSelected: (bool selected) {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => CategoryListProductPage(),
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 4.0),
-                        child: FilterChip(
-                          backgroundColor: Color(0xff1B1A21),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(24.0),
-                            side: BorderSide(
-                              color: Color(0xff1B1A21),
-                            ),
-                          ),
-                          label: Container(
-                            height: 26.0,
-                            child: Center(
-                              child: Text(
-                                "Bebidas",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white60,
-                                ),
-                              ),
-                            ),
-                          ),
-                          onSelected: (bool selected) {},
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 4.0),
-                        child: FilterChip(
-                          backgroundColor: Color(0xff1B1A21),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(24.0),
-                            side: BorderSide(
-                              color: Color(0xff1B1A21),
-                            ),
-                          ),
-                          label: Container(
-                            height: 26.0,
-                            child: Center(
-                              child: Text(
-                                "Entradas",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white60,
-                                ),
-                              ),
-                            ),
-                          ),
-                          onSelected: (bool selected) {},
-                        ),
-                      ),
+                      CategoryFilterWidget(),
+                      CategoryFilterWidget(),
+                      CategoryFilterWidget(),
                       Container(
                         margin: EdgeInsets.symmetric(horizontal: 4.0),
                         child: FilterChip(
