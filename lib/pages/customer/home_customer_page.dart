@@ -54,34 +54,12 @@ class HomeCustomerPage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      CategoryFilterWidget(),
-                      CategoryFilterWidget(),
-                      CategoryFilterWidget(),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 4.0),
-                        child: FilterChip(
-                          backgroundColor: Color(0xff1B1A21),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(24.0),
-                            side: BorderSide(
-                              color: Color(0xff1B1A21),
-                            ),
-                          ),
-                          label: Container(
-                            height: 26.0,
-                            child: Center(
-                              child: Text(
-                                "Platos de Fondo",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white60,
-                                ),
-                              ),
-                            ),
-                          ),
-                          onSelected: (bool selected) {},
-                        ),
-                      ),
+                      CategoryFilterWidget(primary: true, text: "Todos",),
+                      CategoryFilterWidget(primary: false, text: "Postres"),
+                      CategoryFilterWidget(primary: false, text: "Bebidas"),
+                      CategoryFilterWidget(primary: false, text: "Platos de Fondo"),
+                      CategoryFilterWidget(primary: false, text: "Entradas"),
+
                     ],
                   ),
                 ),
