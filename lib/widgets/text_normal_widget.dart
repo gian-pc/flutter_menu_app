@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo3_menu_app/common/colors.dart';
+import 'package:flutter_codigo3_menu_app/common/typography.dart';
 
 class OurText extends StatelessWidget {
   final String? text;
@@ -31,3 +33,36 @@ class OurText extends StatelessWidget {
     );
   }
 }
+
+class H1 extends StatelessWidget {
+  final String? text;
+  H1({required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return OurText(
+      text: this.text,
+      colorText: COLOR_FONT_PRIMARY,
+      fontSize: H1_SIZE,
+      fontFamily: 'Source Sans Pro Black',
+    );
+  }
+}
+
+class H2 extends StatelessWidget {
+  final String? text;
+  H2({required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return OurText(
+      text: this.text,
+      colorText: COLOR_FONT_SECONDARY,
+      fontSize: H2_SIZE,
+      fontFamily: 'Source Sans Pro Regular',
+    );
+  }
+}
+

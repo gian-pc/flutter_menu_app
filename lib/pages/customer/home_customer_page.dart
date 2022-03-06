@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_codigo3_menu_app/pages/customer/category_list_product_page.dart';
 import 'package:flutter_codigo3_menu_app/pages/customer/product_detail_page.dart';
 
+import '../../widgets/text_normal_widget.dart';
+
 class HomeCustomerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -25,22 +27,8 @@ class HomeCustomerPage extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "Central Palace",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 30.0,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Source Sans Pro Black'),
-                        ),
-                        Text(
-                          "Un sitio para tus mejores experiencias.",
-                          style: TextStyle(
-                            color: Colors.white60,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
+                        H1(text:"Central Palace"),
+                        H2(text: "Un sitio para tus mejores experiencias."),
                       ],
                     ),
                     Expanded(child: Container()),
