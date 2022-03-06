@@ -1,13 +1,26 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unnecessary_this
+
 import 'package:flutter/material.dart';
 
 class ItemCarouselWidget extends StatelessWidget {
+  String image;
+  String title;
+  String subtitle;
+  String price;
+  String rate;
+
+  ItemCarouselWidget({
+    required this.image,
+    required this.title,
+    required this.subtitle,
+    required this.price,
+    required this.rate,
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-
-      },
+      onTap: () {},
       child: Container(
         margin: EdgeInsets.only(left: 10.0, right: 10.0),
         constraints: BoxConstraints(
@@ -29,23 +42,24 @@ class ItemCarouselWidget extends StatelessWidget {
                   ),
                 ],
                 image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage(
-                        "https://www.fopesa.com.pe/wp-content/uploads/2020/08/47-fosforera-peruana-inti-1.jpg")),
+                  fit: BoxFit.cover,
+                  image: NetworkImage(
+                    this.image,
+                  ),
+                ),
               ),
               child: Stack(
                 children: [
                   Positioned(
                     right: 0,
                     child: Container(
-                      margin: EdgeInsets.symmetric(
-                          horizontal: 10.0, vertical: 4.0),
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 8.0, vertical: 3.0),
+                      margin:
+                          EdgeInsets.symmetric(horizontal: 10.0, vertical: 4.0),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 8.0, vertical: 3.0),
                       decoration: BoxDecoration(
                         color: Color(0xffFFCC00),
-                        borderRadius:
-                        BorderRadius.circular(26.0),
+                        borderRadius: BorderRadius.circular(26.0),
                       ),
                       child: Text(
                         "30% Desc",
@@ -61,7 +75,9 @@ class ItemCarouselWidget extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text(
-              "Costillar de Cordero",
+              this.title,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -70,7 +86,7 @@ class ItemCarouselWidget extends StatelessWidget {
             ),
             SizedBox(height: 4),
             Text(
-              "Costillar de Cordero con papas nativas Costillar de Cordero con papas nativas",
+              this.subtitle,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
@@ -84,7 +100,7 @@ class ItemCarouselWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "S/. 30",
+                  "S/. ${this.price}",
                   style: TextStyle(
                     color: Colors.white54,
                     fontWeight: FontWeight.bold,
@@ -94,7 +110,7 @@ class ItemCarouselWidget extends StatelessWidget {
                   child: Row(
                     children: [
                       Text(
-                        "4.6",
+                        this.rate,
                         style: TextStyle(
                           color: Colors.white54,
                           fontWeight: FontWeight.bold,

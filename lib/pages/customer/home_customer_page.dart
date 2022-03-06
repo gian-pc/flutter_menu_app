@@ -29,7 +29,7 @@ class HomeCustomerPage extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        H1(text:"Central Palace"),
+                        H1(text: "Central Palace"),
                         H2(text: "Un sitio para tus mejores experiencias."),
                       ],
                     ),
@@ -55,12 +55,15 @@ class HomeCustomerPage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      CategoryFilterWidget(primary: true, text: "Todos",),
+                      CategoryFilterWidget(
+                        primary: true,
+                        text: "Todos",
+                      ),
                       CategoryFilterWidget(primary: false, text: "Postres"),
                       CategoryFilterWidget(primary: false, text: "Bebidas"),
-                      CategoryFilterWidget(primary: false, text: "Platos de Fondo"),
+                      CategoryFilterWidget(
+                          primary: false, text: "Platos de Fondo"),
                       CategoryFilterWidget(primary: false, text: "Entradas"),
-
                     ],
                   ),
                 ),
@@ -74,9 +77,14 @@ class HomeCustomerPage extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    ItemCarouselWidget(),
-                    ItemCarouselWidget(),
-                    ItemCarouselWidget(),
+                    ItemCarouselWidget(
+                      image:
+                          "https://cocimaniacos.com/wp-content/uploads/2017/08/0_142eb1_3fca5e2e_orig.jpg",
+                      title: "Costillar de Cordero",
+                      subtitle: "Costillar de cordero copn especias y acompañado de ensaladas",
+                      price: "50.00",
+                      rate: "4.6",
+                    ),
                   ],
                 ),
               ),
