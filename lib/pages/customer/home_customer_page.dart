@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter_codigo3_menu_app/pages/customer/category_list_product_page.dart';
+import 'package:flutter_codigo3_menu_app/pages/customer/product_detail_page.dart';
 import 'package:flutter_codigo3_menu_app/widgets/category_filter_widget.dart';
 import 'package:flutter_codigo3_menu_app/widgets/item_carousel_widget.dart';
 
@@ -101,7 +102,9 @@ class HomeCustomerPage extends StatelessWidget {
                       price: "50.00",
                       rate: "4.6",
                       discount: "50",
+                      goTo: ProductDetailPage(),
                     ),
+
                   ],
                 ),
               ),
@@ -134,13 +137,14 @@ class HomeCustomerPage extends StatelessWidget {
                   children: [
                     ItemCarouselWidget(
                       image:
-                          "https://cocimaniacos.com/wp-content/uploads/2017/08/0_142eb1_3fca5e2e_orig.jpg",
+                      "https://cocimaniacos.com/wp-content/uploads/2017/08/0_142eb1_3fca5e2e_orig.jpg",
                       title: "Costillar de Cordero",
                       subtitle:
-                          "Costillar de cordero copn especias y acompañado de ensaladas",
+                      "Costillar de cordero copn especias y acompañado de ensaladas",
                       price: "50.00",
                       rate: "4.6",
                       discount: "50",
+                      goTo: ProductDetailPage(),
                     ),
                   ],
                 ),
@@ -174,13 +178,14 @@ class HomeCustomerPage extends StatelessWidget {
                   children: [
                     ItemCarouselWidget(
                       image:
-                          "https://cocimaniacos.com/wp-content/uploads/2017/08/0_142eb1_3fca5e2e_orig.jpg",
+                      "https://cocimaniacos.com/wp-content/uploads/2017/08/0_142eb1_3fca5e2e_orig.jpg",
                       title: "Costillar de Cordero",
                       subtitle:
-                          "Costillar de cordero copn especias y acompañado de ensaladas",
+                      "Costillar de cordero copn especias y acompañado de ensaladas",
                       price: "50.00",
                       rate: "4.6",
                       discount: "50",
+                      goTo: ProductDetailPage(),
                     ),
                   ],
                 ),
