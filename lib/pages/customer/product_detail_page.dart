@@ -19,6 +19,7 @@ class ProductDetailPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               height: 340,
@@ -44,10 +45,28 @@ class ProductDetailPage extends StatelessWidget {
                     ),
                   ),
                   Container(
+                    margin:
+                        EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 6, vertical: 3.0),
+                          decoration: BoxDecoration(
+                            color: BRAND_PRIMARY,
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                          child: Text(
+                            "Platos de Fondo",
+                            style: TextStyle(
+                              color: Colors.black87,
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
                         Text(
                           "Costillar de Cordero",
                           style: TextStyle(
@@ -106,6 +125,94 @@ class ProductDetailPage extends StatelessWidget {
                       ],
                     ),
                   ),
+                ],
+              ),
+            ),
+            SizedBox(height: 14.0),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 10.0),
+              child: Row(
+                children: [
+                  Text(
+                    "Descripción general",
+                    style: TextStyle(
+                        color: Colors.white70,
+                        fontSize: 16.0,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 14.0),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 10.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      "Costillar de cordero de la máxima calidad, acompañado con las mejores especies y guarniciones",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14.0,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+
+
+            SizedBox(height: 20.0),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 10.0),
+              child: Row(
+                children: [
+                  Text(
+                    "Ingredientes principales",
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 16.0,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 14.0),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 10.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "- Carne de cordero premium",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14.0,
+                    ),
+                  ),
+                  Text(
+                    "- Ensaladas",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14.0,
+                    ),
+                  ),
+                  Text(
+                    "- Papas nativas",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14.0,
+                    ),
+                  ),
+                  Text(
+                    "- Guarniciones extras",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14.0,
+                    ),
+                  ),
+
                 ],
               ),
             ),
