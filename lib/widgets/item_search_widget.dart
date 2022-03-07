@@ -3,7 +3,21 @@
 import 'package:flutter/material.dart';
 
 class ItemSearchWidget extends StatelessWidget {
-  const ItemSearchWidget({Key? key}) : super(key: key);
+  String image;
+  String title;
+  String subtitle;
+  String time;
+  String rate;
+  String price;
+
+  ItemSearchWidget({
+    required this.image,
+    required this.title,
+    required this.subtitle,
+    required this.time,
+    required this.rate,
+    required this.price,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +33,7 @@ class ItemSearchWidget extends StatelessWidget {
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: NetworkImage(
-                    "https://www.clara.es/medio/2021/11/28/postres-navidenos_3f462fd7_1280x1115.jpg"),
+                    this.image),
               ),
             ),
           ),
@@ -29,7 +43,9 @@ class ItemSearchWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Torta de de frutas",
+                  this.title,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -38,7 +54,7 @@ class ItemSearchWidget extends StatelessWidget {
                 ),
                 SizedBox(height: 4.0),
                 Text(
-                  "Torta helada a base de frutas de estación y acompañado de nueces deliciosas",
+                  this.subtitle,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -57,7 +73,7 @@ class ItemSearchWidget extends StatelessWidget {
                     ),
                     SizedBox(width: 2.0),
                     Text(
-                      "4.5",
+                      this.rate,
                       style: TextStyle(
                         color: Colors.white60,
                         fontWeight: FontWeight.bold,
@@ -72,7 +88,7 @@ class ItemSearchWidget extends StatelessWidget {
                     ),
                     SizedBox(width: 2.0),
                     Text(
-                      "2 min.",
+                      "${this.time} min.",
                       style: TextStyle(
                         color: Colors.white60,
                         fontWeight: FontWeight.bold,
@@ -85,14 +101,13 @@ class ItemSearchWidget extends StatelessWidget {
             ),
           ),
           Text(
-            "S/. 18.0",
+            "S/. ${this.price}",
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
               fontSize: 16.0,
             ),
           ),
-
         ],
       ),
     );

@@ -26,9 +26,30 @@ class CategoryListProductPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              ItemSearchWidget(),
-              ItemSearchWidget(),
-              ItemSearchWidget(),
+              ItemSearchWidget(
+                image: "http://www.megustacocinar.com/wp-content/uploads/2019/04/Tarta-de-crema-con-fruta-2.jpg",
+                title: "Torta",
+                subtitle: "Torta de frutas acompañados con nueces de estación",
+                rate: "4.5",
+                price: "18.00",
+                time: "2",
+              ),
+              ItemSearchWidget(
+                image: "http://www.megustacocinar.com/wp-content/uploads/2019/04/Tarta-de-crema-con-fruta-2.jpg",
+                title: "Torta",
+                subtitle: "Torta de frutas acompañados con nueces de estación",
+                rate: "4.5",
+                price: "18.00",
+                time: "2",
+              ),
+              ItemSearchWidget(
+                image: "http://www.megustacocinar.com/wp-content/uploads/2019/04/Tarta-de-crema-con-fruta-2.jpg",
+                title: "Torta",
+                subtitle: "Torta de frutas acompañados con nueces de estación",
+                rate: "4.5",
+                price: "18.00",
+                time: "2",
+              ),
             ],
           ),
         ),
