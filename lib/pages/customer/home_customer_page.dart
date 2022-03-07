@@ -1,4 +1,5 @@
 // ignore_for_file: use_key_in_widget_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, prefer_const_constructors
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_codigo3_menu_app/pages/customer/category_list_product_page.dart';
 import 'package:flutter_codigo3_menu_app/pages/customer/product_detail_page.dart';
@@ -9,7 +10,6 @@ import 'package:flutter_codigo3_menu_app/widgets/item_carousel_widget.dart';
 import '../../widgets/text_normal_widget.dart';
 
 class HomeCustomerPage extends StatelessWidget {
-
   FirestoreService _firestoreService = new FirestoreService();
 
   @override
@@ -39,10 +39,7 @@ class HomeCustomerPage extends StatelessWidget {
                     ),
                     Expanded(child: Container()),
                     IconButton(
-                      onPressed: () {
-                        FirestoreService _firestoreService = new FirestoreService();
-                        _firestoreService.getCategories();
-                      },
+                      onPressed: () {},
                       icon: Icon(
                         Icons.search,
                         color: Colors.white,
@@ -54,48 +51,49 @@ class HomeCustomerPage extends StatelessWidget {
               SizedBox(height: 10.0),
 
               // Categories
-              
+
               FutureBuilder(
                 future: _firestoreService.getCategories(),
-                builder: (BuildContext context, AsyncSnapshot snap){
-                  if(snap.hasData){
+                builder: (BuildContext context, AsyncSnapshot snap) {
+                  if (snap.hasData) {
+                    List<Map<String, dynamic>> categories = snap.data;
+
                     return Container(
                       margin: EdgeInsets.symmetric(horizontal: 10.0),
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
-                          children: [
-                            CategoryFilterWidget(
-                              primary: true,
-                              text: "Todos",
-                              goTo: CategoryListProductPage(),
-                            ),
-                            CategoryFilterWidget(
-                              primary: false,
-                              text: "Postres",
-                              goTo: CategoryListProductPage(),
-                            ),
-                            CategoryFilterWidget(
-                              primary: false,
-                              text: "Bebidas",
-                              goTo: CategoryListProductPage(),
-                            ),
-                            CategoryFilterWidget(
-                              primary: false,
-                              text: "Platos de Fondo",
-                              goTo: CategoryListProductPage(),
-                            ),
-                            CategoryFilterWidget(
-                              primary: false,
-                              text: "Entradas",
-                              goTo: CategoryListProductPage(),
-                            ),
-                          ],
+                          children: categories
+                              .map<Widget>(
+                                (e) => CategoryFilterWidget(
+                                  primary: false,
+                                  text: e["description"],
+                                  goTo: CategoryListProductPage(),
+                                ),
+                              )
+                              .toList(),
                         ),
+                        // child: Row(
+                        //   children: [
+                        //     CategoryFilterWidget(
+                        //       primary: true,
+                        //       text: "Todos",
+                        //       goTo: CategoryListProductPage(),
+                        //     ),
+                        //     CategoryFilterWidget(
+                        //       primary: false,
+                        //       text: "Postres",
+                        //       goTo: CategoryListProductPage(),
+                        //     ),
+                        //
+                        //   ],
+                        // ),
                       ),
                     );
                   }
-                  return Center(child: CircularProgressIndicator(),);
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
                 },
               ),
 
