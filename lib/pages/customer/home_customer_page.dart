@@ -2,12 +2,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_codigo3_menu_app/pages/customer/category_list_product_page.dart';
 import 'package:flutter_codigo3_menu_app/pages/customer/product_detail_page.dart';
+import 'package:flutter_codigo3_menu_app/services/firestore_service.dart';
 import 'package:flutter_codigo3_menu_app/widgets/category_filter_widget.dart';
 import 'package:flutter_codigo3_menu_app/widgets/item_carousel_widget.dart';
 
 import '../../widgets/text_normal_widget.dart';
 
 class HomeCustomerPage extends StatelessWidget {
+
+  FirestoreService _firestoreService = new FirestoreService();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +39,10 @@ class HomeCustomerPage extends StatelessWidget {
                     ),
                     Expanded(child: Container()),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        FirestoreService _firestoreService = new FirestoreService();
+                        _firestoreService.getCategories();
+                      },
                       icon: Icon(
                         Icons.search,
                         color: Colors.white,
@@ -44,50 +51,56 @@ class HomeCustomerPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 10.0,
-              ),
+              SizedBox(height: 10.0),
 
               // Categories
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 10.0),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      CategoryFilterWidget(
-                        primary: true,
-                        text: "Todos",
-                        goTo: CategoryListProductPage(),
+              
+              FutureBuilder(
+                future: _firestoreService.getCategories(),
+                builder: (BuildContext context, AsyncSnapshot snap){
+                  if(snap.hasData){
+                    return Container(
+                      margin: EdgeInsets.symmetric(horizontal: 10.0),
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            CategoryFilterWidget(
+                              primary: true,
+                              text: "Todos",
+                              goTo: CategoryListProductPage(),
+                            ),
+                            CategoryFilterWidget(
+                              primary: false,
+                              text: "Postres",
+                              goTo: CategoryListProductPage(),
+                            ),
+                            CategoryFilterWidget(
+                              primary: false,
+                              text: "Bebidas",
+                              goTo: CategoryListProductPage(),
+                            ),
+                            CategoryFilterWidget(
+                              primary: false,
+                              text: "Platos de Fondo",
+                              goTo: CategoryListProductPage(),
+                            ),
+                            CategoryFilterWidget(
+                              primary: false,
+                              text: "Entradas",
+                              goTo: CategoryListProductPage(),
+                            ),
+                          ],
+                        ),
                       ),
-                      CategoryFilterWidget(
-                        primary: false,
-                        text: "Postres",
-                        goTo: CategoryListProductPage(),
-                      ),
-                      CategoryFilterWidget(
-                        primary: false,
-                        text: "Bebidas",
-                        goTo: CategoryListProductPage(),
-                      ),
-                      CategoryFilterWidget(
-                        primary: false,
-                        text: "Platos de Fondo",
-                        goTo: CategoryListProductPage(),
-                      ),
-                      CategoryFilterWidget(
-                        primary: false,
-                        text: "Entradas",
-                        goTo: CategoryListProductPage(),
-                      ),
-                    ],
-                  ),
-                ),
+                    );
+                  }
+                  return Center(child: CircularProgressIndicator(),);
+                },
               ),
 
-              SizedBox(
-                height: 20.0,
-              ),
+              SizedBox(height: 20.0),
+
               // Promotions
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -104,7 +117,6 @@ class HomeCustomerPage extends StatelessWidget {
                       discount: "50",
                       goTo: ProductDetailPage(),
                     ),
-
                   ],
                 ),
               ),
@@ -137,10 +149,10 @@ class HomeCustomerPage extends StatelessWidget {
                   children: [
                     ItemCarouselWidget(
                       image:
-                      "https://cocimaniacos.com/wp-content/uploads/2017/08/0_142eb1_3fca5e2e_orig.jpg",
+                          "https://cocimaniacos.com/wp-content/uploads/2017/08/0_142eb1_3fca5e2e_orig.jpg",
                       title: "Costillar de Cordero",
                       subtitle:
-                      "Costillar de cordero copn especias y acompañado de ensaladas",
+                          "Costillar de cordero copn especias y acompañado de ensaladas",
                       price: "50.00",
                       rate: "4.6",
                       discount: "50",
@@ -178,10 +190,10 @@ class HomeCustomerPage extends StatelessWidget {
                   children: [
                     ItemCarouselWidget(
                       image:
-                      "https://cocimaniacos.com/wp-content/uploads/2017/08/0_142eb1_3fca5e2e_orig.jpg",
+                          "https://cocimaniacos.com/wp-content/uploads/2017/08/0_142eb1_3fca5e2e_orig.jpg",
                       title: "Costillar de Cordero",
                       subtitle:
-                      "Costillar de cordero copn especias y acompañado de ensaladas",
+                          "Costillar de cordero copn especias y acompañado de ensaladas",
                       price: "50.00",
                       rate: "4.6",
                       discount: "50",

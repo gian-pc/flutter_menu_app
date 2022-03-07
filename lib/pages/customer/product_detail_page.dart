@@ -3,6 +3,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_codigo3_menu_app/common/colors.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProductDetailPage extends StatelessWidget {
   @override
@@ -16,6 +18,14 @@ class ProductDetailPage extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
+      ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed:() async{
+          await launch("https://api.whatsapp.com/send?phone=51986924381&text=Hola%20como%20estas%20?");
+        },
+        backgroundColor: Color(0xff45EF61),
+        child: SvgPicture.asset('assets/images/whatsapp.svg', color: Colors.white,height: 40.0,),
       ),
       body: SingleChildScrollView(
         child: Column(
