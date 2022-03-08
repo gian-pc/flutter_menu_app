@@ -10,7 +10,8 @@ import 'package:flutter_codigo3_menu_app/widgets/item_carousel_widget.dart';
 import '../../widgets/text_normal_widget.dart';
 
 class HomeCustomerPage extends StatelessWidget {
-  FirestoreService _firestoreService = new FirestoreService();
+  FirestoreService _categoriesFirestoreService = new FirestoreService(collection: 'categories');
+  FirestoreService _productsFirestoreService = new FirestoreService(collection: 'products');
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +54,7 @@ class HomeCustomerPage extends StatelessWidget {
               // Categories
 
               FutureBuilder(
-                future: _firestoreService.getCategories(),
+                future: _categoriesFirestoreService.getCategories(),
                 builder: (BuildContext context, AsyncSnapshot snap) {
                   if (snap.hasData) {
                     List<Map<String, dynamic>> categories = snap.data;
