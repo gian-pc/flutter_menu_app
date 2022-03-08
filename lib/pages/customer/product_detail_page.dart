@@ -7,6 +7,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProductDetailPage extends StatelessWidget {
+  Map<String, dynamic>? product;
+
+  ProductDetailPage({this.product});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,13 +23,17 @@ class ProductDetailPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-
       floatingActionButton: FloatingActionButton(
-        onPressed:() async{
-          await launch("https://api.whatsapp.com/send?phone=51986924381&text=Hola%20como%20estas%20?");
+        onPressed: () async {
+          await launch(
+              "https://api.whatsapp.com/send?phone=51986924381&text=Hola%20como%20estas%20?");
         },
         backgroundColor: Color(0xff45EF61),
-        child: SvgPicture.asset('assets/images/whatsapp.svg', color: Colors.white,height: 40.0,),
+        child: SvgPicture.asset(
+          'assets/images/whatsapp.svg',
+          color: Colors.white,
+          height: 40.0,
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -36,8 +44,7 @@ class ProductDetailPage extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: NetworkImage(
-                      "https://cocimaniacos.com/wp-content/uploads/2017/08/0_142eb1_3fca5e2e_orig.jpg"),
+                  image: NetworkImage(this.product!["image"]),
                 ),
               ),
               child: Stack(
@@ -78,7 +85,7 @@ class ProductDetailPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          "Costillar de Cordero",
+                          this.product!["name"],
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 24.0,
@@ -89,7 +96,7 @@ class ProductDetailPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "S/. 50.00",
+                              "S/.${this.product!["price"].toStringAsFixed(2)}",
                               style: TextStyle(
                                 color: Colors.white70,
                                 fontSize: 18.0,
@@ -106,7 +113,7 @@ class ProductDetailPage extends StatelessWidget {
                                   ),
                                   SizedBox(width: 3.0),
                                   Text(
-                                    "10 min",
+                                    "${this.product!["time"]} min",
                                     style: TextStyle(
                                         color: Colors.white70,
                                         fontSize: 16.0,
@@ -120,7 +127,7 @@ class ProductDetailPage extends StatelessWidget {
                                   ),
                                   SizedBox(width: 3.0),
                                   Text(
-                                    "4.5",
+                                    this.product!["rate"].toStringAsFixed(1),
                                     style: TextStyle(
                                       color: Colors.white70,
                                       fontSize: 16.0,
@@ -146,8 +153,8 @@ class ProductDetailPage extends StatelessWidget {
                   Text(
                     "Descripción general",
                     style: TextStyle(
-                        color: Colors.white70,
-                        fontSize: 16.0,
+                      color: Colors.white70,
+                      fontSize: 16.0,
                     ),
                   ),
                 ],
@@ -160,7 +167,7 @@ class ProductDetailPage extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      "Costillar de cordero de la máxima calidad, acompañado con las mejores especies y guarniciones",
+                      this.product!["description"],
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 14.0,
@@ -170,9 +177,6 @@ class ProductDetailPage extends StatelessWidget {
                 ],
               ),
             ),
-
-
-
             SizedBox(height: 20.0),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 10.0),
@@ -193,37 +197,15 @@ class ProductDetailPage extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "- Carne de cordero premium",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14.0,
-                    ),
-                  ),
-                  Text(
-                    "- Ensaladas",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14.0,
-                    ),
-                  ),
-                  Text(
-                    "- Papas nativas",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14.0,
-                    ),
-                  ),
-                  Text(
-                    "- Guarniciones extras",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14.0,
-                    ),
-                  ),
-
-                ],
+                children: this.product!["ingredients"].map<Widget>(
+                      (item) => Text(
+                        "- ${item}",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14.0,
+                        ),
+                      ),
+                    ).toList(),
               ),
             ),
           ],

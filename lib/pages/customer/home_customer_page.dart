@@ -144,7 +144,7 @@ class HomeCustomerPage extends StatelessWidget {
                           price: e["price"].toStringAsFixed(2),
                           rate: e["rate"].toStringAsFixed(1),
                           discount: e["discount"],
-                          goTo: ProductDetailPage(),
+                          goTo: ProductDetailPage(product: e),
                         )).toList(),
                       ),
                     );
