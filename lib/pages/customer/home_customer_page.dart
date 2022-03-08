@@ -130,7 +130,7 @@ class HomeCustomerPage extends StatelessWidget {
               ),
               
               FutureBuilder(
-                future: _productFirestoreService.getProductHome(),
+                future: _productFirestoreService.getProductHome(categoryId: 'HqaYDYERtTOgnNL7DGqs'),
                 builder: (BuildContext context, AsyncSnapshot snap){
                   if(snap.hasData){
                     List<Map<String,dynamic>> products = snap.data;
