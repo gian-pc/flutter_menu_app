@@ -177,23 +177,29 @@ class HomeCustomerPage extends StatelessWidget {
               SizedBox(
                 height: 20.0,
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    ItemCarouselWidget(
-                      image:
-                          "https://cocimaniacos.com/wp-content/uploads/2017/08/0_142eb1_3fca5e2e_orig.jpg",
-                      title: "Costillar de Cordero",
-                      subtitle:
-                          "Costillar de cordero copn especias y acompañado de ensaladas",
-                      price: "50.00",
-                      rate: "4.6",
-                      discount: "50",
-                      goTo: ProductDetailPage(),
-                    ),
-                  ],
-                ),
+              FutureBuilder(
+                future: _productFirestoreService.getProductHome(categoryId: 'rdXr3iCSzE5ZPFDrBZF5'),
+                builder: (BuildContext context, AsyncSnapshot snap){
+                  if(snap.hasData){
+                    List<Map<String,dynamic>> products = snap.data;
+                    return SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: products.map<Widget>((e) => ItemCarouselWidget(
+                          image:e["image"],
+                          title: e["name"],
+                          subtitle:e["description"],
+                          price: e["price"].toStringAsFixed(2),
+                          rate: e["rate"].toStringAsFixed(1),
+                          discount: e["discount"],
+                          goTo: ProductDetailPage(),
+                        )).toList(),
+                      ),
+                    );
+                  }
+                  return Center(child: CircularProgressIndicator(),);
+
+                },
               ),
               SizedBox(
                 height: 40.0,
