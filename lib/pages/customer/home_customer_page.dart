@@ -66,28 +66,13 @@ class HomeCustomerPage extends StatelessWidget {
                           children: categories
                               .map<Widget>(
                                 (e) => CategoryFilterWidget(
-                                  primary: false,
+                                  primary: e["order"],
                                   text: e["description"],
                                   goTo: CategoryListProductPage(),
                                 ),
                               )
                               .toList(),
                         ),
-                        // child: Row(
-                        //   children: [
-                        //     CategoryFilterWidget(
-                        //       primary: true,
-                        //       text: "Todos",
-                        //       goTo: CategoryListProductPage(),
-                        //     ),
-                        //     CategoryFilterWidget(
-                        //       primary: false,
-                        //       text: "Postres",
-                        //       goTo: CategoryListProductPage(),
-                        //     ),
-                        //
-                        //   ],
-                        // ),
                       ),
                     );
                   }
